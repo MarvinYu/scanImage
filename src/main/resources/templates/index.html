@@ -1,19 +1,185 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- saved from url=(0014)about:internet -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <meta charset="UTF-8"/>
-    <title>index</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <meta name="apple-mobile-web-app-title" content="图文天空">
+    <meta name="viewport" content="initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+    <title>图文天空</title>
+
+    <script type="text/javascript">
+        if(document.cookie.match(new RegExp('(^| )fed_color=([^;]*)(;|$)')) != null) {
+            var color = document.cookie.match(new RegExp('(^| )fed_color=([^;]*)(;|$)'));
+            if(color[2] == 'white') {
+                var elementid = document.getElementById('fed-colo-color');
+                if(elementid) elementid.parentNode.removeChild(elementid);
+            } else if(!document.getElementById('fed-colo-color')) {
+                var style = document.createElement('link');
+                style.type = 'text/css';
+                style.rel = 'stylesheet';
+                style.id = 'fed-colo-color';
+                style.href = '/templets/vfed/asset/css/' + unescape(color[2]) + '.css?v=';
+                document.getElementsByTagName('head').item(0).appendChild(style);
+            } else document.getElementById('fed-colo-color').href = '/templets/vfed/asset/css/' + unescape(color[2]) + '.css?v=';
+        }
+    </script>
+
+    <link rel="stylesheet" th:href="@{/css/layer.css}" id="layuicss-layer">
 </head>
-<body>
-    <table border="1">
-        <tbody>
-        <tr>
-            <th>名称</th>
-        </tr>
-        <tr th:each="image : ${imageVOList}">
-            <img th:src="${image.path}" width="400" height="300">
-        </tr>
-        </tbody>
-    </table>
+
+<body class="fed-min-width">
+<div class="fed-head-info fed-back-whits fed-min-width fed-box-shadow">
+    <div class="fed-part-case">
+        <div class="fed-navs-info">
+            <ul class="fed-menu-info">
+                <li class="fed-pull-left">
+                    <a class="fed-menu-logo fed-show-kind" href="https://baidu.com">
+                        <img width="96" height="40" alt="图文天空" th:src="@{/images/logo.png}">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="fed-main-info fed-min-width">
+    <div class="fed-part-layout fed-back-whits">
+        <div class="fed-list-head fed-part-rows fed-padding">
+            <h2 class="fed-font-xvi">今日更新</h2>
+            <ul class="fed-part-tips fed-padding">
+                <li>今日更新&nbsp;<span class="fed-text-green">8</span>&nbsp;部</li>
+            </ul>
+        </div>
+        <!--todo:List-->
+        <ul class="fed-list-info fed-list-img fed-part-rows" th:each="image : ${imageVOList}">
+            <li class="fed-list-item fed-padding fed-col-xs6 fed-col-sm4 fed-col-md3">
+                <a class="fed-list-pics fed-lazy fed-part-16by9" href=".html"  th:attr="data-origina=${image.path}" th:style="'display:block;background-image:url(' + ${image.path} + ')' ">
+                    <span class="fed-list-play fed-list-arts fed-hide-xs"></span>
+                    <span class="fed-list-score fed-font-xii fed-back-green">18+</span>
+                    <span class="fed-list-remarks fed-font-xii fed-text-white fed-text-center">
+						<font color="#FFFF00">第36话</font>
+					</span>
+                </a>
+                <a class="fed-list-title fed-font-xiv fed-text-center fed-text-sm-left fed-visible fed-part-eone" href=".html">
+                    <p>济州岛
+                    </p>
+                </a>
+            </li>
+
+            <li class="fed-list-item fed-padding fed-col-xs6 fed-col-sm4 fed-col-md3">
+                <a class="fed-list-pics fed-lazy fed-part-16by9" href=".html"  th:attr="data-origina=${image.path}" th:style="'display:block;background-image:url(' + ${image.path} + ')' ">
+                    <span class="fed-list-play fed-list-arts fed-hide-xs"></span>
+                    <span class="fed-list-score fed-font-xii fed-back-green">18+</span>
+                    <span class="fed-list-remarks fed-font-xii fed-text-white fed-text-center">
+						<font color="#FFFF00">第36话</font>
+					</span>
+                </a>
+                <a class="fed-list-title fed-font-xiv fed-text-center fed-text-sm-left fed-visible fed-part-eone" href=".html">
+                    <p>济州岛
+                    </p>
+                </a>
+            </li>
+
+
+            <li class="fed-list-item fed-padding fed-col-xs6 fed-col-sm4 fed-col-md3">
+                <a class="fed-list-pics fed-lazy fed-part-16by9" href=".html"  th:attr="data-origina=${image.path}" th:style="'display:block;background-image:url(' + ${image.path} + ')' ">
+                    <span class="fed-list-play fed-list-arts fed-hide-xs"></span>
+                    <span class="fed-list-score fed-font-xii fed-back-green">18+</span>
+                    <span class="fed-list-remarks fed-font-xii fed-text-white fed-text-center">
+						<font color="#FFFF00">第36话</font>
+					</span>
+                </a>
+                <a class="fed-list-title fed-font-xiv fed-text-center fed-text-sm-left fed-visible fed-part-eone" href=".html">
+                    <p>济州岛
+                    </p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="fed-goto-info">
+    <a class="fed-goto-share fed-visible fed-text-center fed-back-whits fed-icon-font fed-icon-liuyan" href="javascript:;"></a>
+    <a class="fed-goto-color fed-visible fed-text-center fed-back-whits fed-icon-font fed-icon-fengge fed-event" href="javascript:;"></a>
+    <a class="fed-goto-toper fed-hidden fed-text-center fed-back-whits fed-icon-font fed-icon-top" href="javascript:;"></a>
+</div>
+
+<script type="text/javascript">
+    var vfed = {
+        'path': '/',
+        'tips': "KRid3d3LnR3aG0ubmV0PTI2NDQzMjIzMDM=",
+        'ver': '3.1.5',
+        'tpl': '/templets/vfed/',
+        'mid': '',
+        'aid': '',
+        'did': '',
+        'sid': '',
+        'nid': '',
+        'wap': '',
+        'mob': '0',
+        'not': '1'
+    };
+</script>
+<script th:src="@{/js/jquery.js}" type="text/javascript" charset="utf-8"></script>
+<script th:src="@{/js/global.js}" type="text/javascript" charset="utf-8"></script>
+<input type="hidden" id="userfirstName" value="游客">
+
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            url: '/member/ajax_login.php',
+            dataType: 'json',
+            async: false,
+            data: {'action':'status'},
+            success: function (res) {
+                if (res.code == 1) {
+                    res.userhistory !='' ? $('#history-list').html(res.userhistory) : '';
+                    $('#usermenu-list').html(res.usermenu);
+                    $('#userfirstName').val(res.username);
+                } else {
+                    $('#history-list').html('<li class="fed-part-rows fed-line-bottom"><a class="fed-part-rows" href="/member">您还未登录，无法查询！</a></li>');
+                }
+            }
+        });
+    });
+    $(document).on('click','.fed-clear',function () {
+        $.ajax({
+            url: '/member/ajax_login.php',
+            dataType: 'json',
+            async: false,
+            data: {'action':'clearhistory'},
+            success: function (res) {
+                if (res.code == 1) {
+                    $('#history-list').html(res.userhistory);
+                    $('#usermenu-list').html(res.usermenu);
+                } else {
+                    $('#history-list').html('<li class="fed-part-rows fed-line-bottom"><a class="fed-part-rows" href="javascript:;">您还未登录，无法查询！</a></li>');
+                }
+            }
+        });
+    });
+</script>
+
+<style>
+    #fc_frame {
+        display: none;
+    }
+</style>
+
+<div class="fed-foot-info fed-part-layout fed-back-whits">
+    <div class="fed-part-case">
+        <p class="fed-text-center fed-text-black"></p>
+        <p class="fed-text-center fed-text-black"></p>
+        <p class="fed-text-center fed-text-black fed-foot-maps fed-font-size"></p>
+        <p class="fed-text-center fed-text-black">Copyright ©2016 - 2022</p>
+    </div>
+</div>
+
 </body>
 </html>
