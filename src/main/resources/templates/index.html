@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>index</title>
+</head>
+<body>
+    <table border="1">
+        <tbody>
+        <tr>
+            <th>名称</th>
+        </tr>
+        <tr th:each="image : ${imageVOList}">
+            <img th:src="${image.path}" width="400" height="300">
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>
